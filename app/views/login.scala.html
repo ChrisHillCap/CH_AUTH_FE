@@ -1,0 +1,11 @@
+
+@(myForm:Form[Login])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+@import helper._
+@helper.form(action = routes.LoginController.submit()) {
+    @CSRF.formField
+    @helper.inputText(myForm("email"))
+
+    @helper.inputPassword(myForm("password"))
+    <button type="submit">Login </button>
+
+}
